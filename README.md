@@ -1,2 +1,2 @@
 # Jogo_Da_Cobrinha
- Jogo da cobrinha feito toto em JavaScript
+ Jogo da cobrinha feito todo em JavaScript
