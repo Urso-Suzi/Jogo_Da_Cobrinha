@@ -54,13 +54,25 @@ canvas {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 3rem;
+    color: red;
 }
 
 .final-score {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
     font-weight: 800;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    line-height: 60px;
     text-decoration: underline;
+    color: yellow;
     
+    
+}
+
+#pontos {
+    font-size: 4rem;
 }
 
 .btn-play{
@@ -76,4 +88,9 @@ canvas {
     justify-content: center;
     gap: 5px;
     cursor: pointer;
+}
+
+.btn-play:hover{
+   background-color: green;
+   color: white;
 }

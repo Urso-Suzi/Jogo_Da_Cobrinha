@@ -7,8 +7,8 @@ const finalScore =  document.querySelector(".final-score > span")
 const menu =  document.querySelector(".menu-screen")
 const buttonPlay =  document.querySelector(".btn-play")
 
-const audio  = new Audio("../assets/audio.mp3")
-const death = new Audio("../assets/death.mp4")
+const audio  = new Audio("./assets/audio.mp3")
+
 
 const size = 30
 
@@ -17,9 +17,17 @@ const initialPosition2 = { x: 300, y:240 }
 
 let snake = [initialPosition, initialPosition2]
 
+let velocidade = 250
+
+const aumentaVelocidade = () => {
+    if (velocidade >= 125) {
+        velocidade = velocidade - 25
+    }
+}
+
 
 const incrementScore = () => {
-    score.innerText = parseInt(score.innerText) + 10
+    score.innerText = parseInt(score.innerText) + 15
 }
 
 const randomNumber = (min, max) => {
@@ -126,7 +134,9 @@ const checkEat = () => {
         incrementScore()
         snake.push(head)
         audio.play()
+        aumentaVelocidade()
         
+
         let x = randomPosition()
         let y = randomPosition()
 
@@ -176,12 +186,12 @@ const gameLoop = () => {
 
     loopId = setTimeout(() => {
         gameLoop()
-    }, 150)
+    }, velocidade)
 }
 
 const gameOver = () => {
     direction = undefined
-    
+    velocidade = 250
     
     menu.style.display = "flex"
     finalScore.innerText = score.innerText
